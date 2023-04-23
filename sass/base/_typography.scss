@@ -1,0 +1,5 @@
+@use "../abstracts" as a;
+.primary__heading {
+  color: a.$mainTxt-clr;
+  font-size: 2rem;
+}

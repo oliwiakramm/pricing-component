@@ -1,0 +1,82 @@
+@use "../abstracts" as a;
+
+.pricing__container {
+  margin-top: 2.5rem;
+}
+.pricing__box {
+  @include a.flex($direction: row);
+  gap: 1.5rem;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  position: absolute;
+  opacity: 0.0001;
+}
+
+input[type="radio"]:first-of-type {
+  left: 0;
+}
+
+input[type="radio"]:last-of-type {
+  right: 0;
+}
+
+input[type="radio"]:checked + label {
+  color: a.$mainTxt-clr;
+}
+
+input[type="radio"]:checked:focus-visible + label {
+  text-decoration: underline;
+}
+
+input[type="radio"]:not(:checked) + label:hover {
+  text-decoration: underline;
+  color: hsl(237, 63%, 64%);
+}
+
+input[type="radio"]:not(:checked):focus + label:hover {
+  text-decoration: underline;
+  color: hsl(237, 63%, 64%);
+}
+
+label {
+  font-size: 0.93rem;
+  color: a.$txt1-clr;
+  cursor: pointer;
+}
+
+.toggle {
+  position: relative;
+  height: 2rem;
+  width: 3.5rem;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, a.$gradient-clr);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      lighten(hsl(236, 72%, 79%), 5%),
+      lighten(hsl(237, 63%, 64%), 5%)
+    );
+  }
+}
+
+.toggle:before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: a.$transition;
+}
+
+.toggle.monthly::before {
+  left: 1.7rem;
+}

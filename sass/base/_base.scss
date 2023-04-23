@@ -1,0 +1,20 @@
+@use "../abstracts" as a;
+body {
+  min-height: 100vh;
+  font-family: a.$txt-font;
+  background-color: a.$bg-clr;
+  background-image: url(../../images/bg-bottom.svg),
+    url(../../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: 0 bottom, right top;
+}
+
+.main {
+  text-align: center;
+  padding-top: 4.1rem;
+  margin: 0 1.5rem;
+
+  @include a.media-breakpoint-up(68em) {
+    padding-top: 4.4rem;
+  }
+}
